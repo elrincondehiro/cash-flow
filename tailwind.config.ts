@@ -1,18 +1,17 @@
-import type { Config } from "tailwindcss";
+import { theme } from './src/styles/theme'
 
-export default {
+module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/types/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      colors: theme.colors,
+      spacing: theme.spacing,
+      borderRadius: theme.borderRadius,
     },
   },
   plugins: [],
-} satisfies Config;
+}
